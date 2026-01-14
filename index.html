@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mesa con Grid</title>
+
+<style>
+    body{
+        margin: 0;
+    }
+
+    
+    .container{
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-rows: 3fr 2fr;
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-areas:
+            "mantel mantel mantel"
+            "pata1 mesa pata2";
+        
+            
+    }
+
+   
+    .mantel{
+        grid-area: mantel;
+        background: red;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    
+    .vaso{
+        display: grid;
+        grid-template-rows: 2fr 1fr;
+        width: 80px;
+        height: 140px;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .vaso .arriba{
+        background: #ffe59a;
+    }
+
+    .vaso .abajo{
+        background: #9ddcff;
+    }
+
+    
+    .plato{
+        background: #d9d9d9;
+        width: 220px;
+        height: 140px;
+        justify-self: center;
+        border-radius: 66%;
+        padding: 10%;
+        
+        
+    }
+
+    
+    .vaso.izq{ grid-column: 2; grid-row: 1; }
+    .plato.izq{ grid-column: 1; grid-row: 2; }
+
+    .vaso.der{ grid-column: 5; grid-row: 1; }
+    .plato.der{ grid-column: 6; grid-row: 2; }
+
+    
+    .mesa{
+        grid-area: mesa;
+        background: rgb(171, 96, 96);
+    }
+
+    
+    .pata1{
+        grid-area: pata1;
+        background: rgb(79, 44, 19);
+    }
+
+    .pata2{
+        grid-area: pata2;
+        background: rgb(79, 44, 19);
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="mantel">
+
+        <div class="vaso izq">
+            <div class="arriba"></div>
+            <div class="abajo"></div>
+        </div>
+
+        <div class="plato izq"></div>
+
+        <div class="vaso der">
+            <div class="arriba"></div>
+            <div class="abajo"></div>
+        </div>
+
+        <div class="plato der"></div>
+
+    </div>
+
+    <div class="pata1"></div>
+    <div class="mesa"></div>
+    <div class="pata2"></div>
+
+</div>
+
+</body>
+</html>
